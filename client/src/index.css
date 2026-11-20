@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   StudyBuddy AI — Global Styles
+   Warm, friendly, and clean aesthetic.
+   ===================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-100 text-warm-text font-sans;
+    min-height: 100vh;
+  }
+
+  /* Better focus styles */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-500;
+  }
+}
+
+@layer components {
+  /* ---- Flashcard flip animation ---- */
+  .flip-card {
+    perspective: 1200px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* ---- Smooth tab underline ---- */
+  .tab-btn {
+    @apply relative px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200;
+  }
+
+  .tab-btn.active {
+    @apply bg-accent-500 text-white shadow-warm;
+  }
+
+  .tab-btn:not(.active) {
+    @apply text-warm-muted hover:text-warm-text hover:bg-cream-200;
+  }
+
+  /* ---- Quiz option button ---- */
+  .quiz-option {
+    @apply w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-150 font-medium text-sm;
+  }
+
+  .quiz-option.default {
+    @apply border-warm-border bg-white hover:border-accent-200 hover:bg-accent-50 cursor-pointer;
+  }
+
+  .quiz-option.correct {
+    @apply border-green-400 bg-green-50 text-green-800 cursor-default;
+  }
+
+  .quiz-option.incorrect {
+    @apply border-red-400 bg-red-50 text-red-700 cursor-default;
+  }
+
+  .quiz-option.reveal {
+    @apply border-green-400 bg-green-50 text-green-800 cursor-default;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out both;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
