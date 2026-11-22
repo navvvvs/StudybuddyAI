@@ -1,10 +1,10 @@
-# StudyBuddy AI 📚
+# StudyBuddy AI
 
 > Paste your study notes and get a smart **summary**, **8 flashcards**, and a **5-question quiz** — powered by Google Gemini and saved to Supabase.
 
 ---
 
-## ✨ Features
+## Features
 
 - **AI-powered summarisation** — 4–6 sentence overview of your notes
 - **Flip flashcards** — 8 key term/definition cards with a 3D flip animation
@@ -15,7 +15,7 @@
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer    | Technology                                                 |
 |----------|------------------------------------------------------------|
@@ -27,7 +27,7 @@
 
 ---
 
-## 🗄 Supabase Setup
+## Supabase Setup
 
 ### 1. Create a Supabase project
 
@@ -58,7 +58,7 @@ CREATE TABLE study_sets (
 
 ---
 
-## 🤖 Gemini API Key
+## Gemini API Key
 
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. Click **Get API key** and copy it.
@@ -66,7 +66,7 @@ CREATE TABLE study_sets (
 
 ---
 
-## 🚀 Setup & Running
+## Setup & Running
 
 ### Prerequisites
 - Node.js 18+
@@ -99,7 +99,7 @@ The app will be available at:
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 | Method | Endpoint               | Description                                     |
 |--------|------------------------|-------------------------------------------------|
@@ -119,7 +119,7 @@ The app will be available at:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - User authentication (Supabase Auth)
 - Export flashcards as a PDF
@@ -130,7 +130,7 @@ The app will be available at:
 
 ---
 
-## ⚠️ Important Notes
+## Important Notes
 
 - The `SUPABASE_SERVICE_KEY` is **never** sent to the browser. It lives in `server/.env` only.
 - The backend validates all input before calling Gemini (min 50 chars, max 8000 chars).
